@@ -346,12 +346,21 @@
     if($(".music-box").length) {
         var musicBtn = $(".music-box-toggle-btn"),
             musicBox = $(".music-holder");
+        let toggle = false;
 
         musicBtn.on("click", function() {
             musicBox.toggleClass("toggle-music-box");
+            toggle = !toggle;
+            if (toggle){
+                document.getElementById('autoplay').play();
+            } else {
+                document.getElementById('autoplay').pause();
+            }
+            
             return false;
         })
     }
+    
 
 
 
